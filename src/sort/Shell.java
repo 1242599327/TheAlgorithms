@@ -6,6 +6,7 @@ import java.util.Arrays;
  * Created by sinyuk on 2018/3/10.
  *
  */
+@Deprecated
 public class Shell {
     public static void main(String[] args) {
         Comparable[] a = new Comparable[]{6, 3, 2, 5, 1, 4};
@@ -17,7 +18,7 @@ public class Shell {
         int H = 1;
         while (H < N / 3) H = H * 3 + 1;
         while (H >= 1) {
-            for (int i = 0; i < N; i++) {
+            for (int i = H; i < N; i++) {
                 int min = i;
                 for (int j = i + 1; j < N; j++) {
                     if (Utils.less(a[j], a[min])) min = j;
