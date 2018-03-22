@@ -1,6 +1,11 @@
 package linkedlist
 
-class Node<K, V> constructor(val key: K, var value: V?, var next: Node<K, V>? = null) {
+class Node<K, V> constructor(val key: K, var value: V? = null, var next: Node<K, V>? = null) {
+    override fun toString() = if (next == null) {
+        "[$key, $value, next = null]"
+    } else {
+        "[$key, $value]"
+    }
 }
 
 class LinkedList<K, V> constructor(var head: Node<K, V>? = null) {
@@ -123,5 +128,22 @@ class LinkedList<K, V> constructor(var head: Node<K, V>? = null) {
     }
 
     fun find(key: K) = Companion.find(head, key)
+
+    override fun toString(): String {
+        if (head == null) return "Null"
+        val sb = StringBuilder()
+        var node: Node<K, V>? = head!!
+        while (true) {
+            sb.append(node)
+            if (node?.next == null) {
+                break
+            } else {
+                sb.append("->")
+                node = node.next
+            }
+        }
+        return sb.toString()
+    }
+
 
 }
