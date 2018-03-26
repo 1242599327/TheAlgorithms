@@ -11,7 +11,7 @@ import static sort.Utils.less;
 public class Quick {
 
     public static void main(String[] args) {
-        Comparable[] a = new Comparable[]{4, 1, 2, 3, 5, 6};
+        Comparable[] a = new Comparable[]{2, 1, 2, 2, 1, 1, 2, 1, 2};
         sort(a, 0, a.length - 1);
         System.out.println(Arrays.toString(a));
     }

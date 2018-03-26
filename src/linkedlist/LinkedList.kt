@@ -137,6 +137,9 @@ class LinkedList<K, V> constructor(var head: Node<K, V>? = null) {
             sb.append(node)
             if (node?.next == null) {
                 break
+            } else if (node.next == head) {  // 对于环的处理
+                sb.append("->").append(head)
+                break
             } else {
                 sb.append("->")
                 node = node.next
